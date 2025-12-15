@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply bg-gray-900 text-white;
+    background-image: url('./assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+html {
+    overflow: auto;
+}
+
+.glass-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-lg;
+}
+
+.glass-btn {
+    @apply bg-white/20 backdrop-blur-md rounded-xl border border-white/30 shadow-md transition-all duration-300;
+}
+
+.glass-btn:hover {
+    @apply bg-white/30 scale-105;
+}

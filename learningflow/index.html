@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Flow - 프로젝트 개요</title>
+    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter 폰트 (Google Fonts) --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Noto Sans KR 폰트를 기본 폰트로, Inter를 보조로 설정 */
+        body {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+        }
+        /* 그라데이션 텍스트를 위한 기본 스타일 */
+        .gradient-text {
+            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* Fixed Header가 콘텐츠를 가리지 않도록 padding-top 추가 */
+        body {
+            padding-top: 4rem; /* 헤더 높이에 맞게 조정 (h-16) */
+            display: flex; /* Footer를 하단에 붙이기 위한 flex 설정 */
+            flex-direction: column; /* 컨텐츠를 세로로 쌓음 */
+            min-height: 100vh; /* 최소 높이를 화면 전체로 설정 */
+        }
+        .container {
+            flex-grow: 1; /* 메인 컨텐츠가 남은 공간을 채우도록 함 */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Fixed Navigation Header --><nav class="fixed top-0 left-0 right-0 bg-white shadow-md z-50 h-16 flex items-center px-6">
+        <div class="container mx-auto max-w-5xl flex justify-between items-center">
+            <!-- Logo / Project Title --><a href="#" class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-fuchsia-500 bg-clip-text text-transparent">
+                Learning Flow
+            </a>
+
+            <!-- Navigation Links --><div class="hidden md:flex space-x-8">
+                <a href="#intro" class="text-gray-600 hover:text-purple-700 transition-colors font-medium">소개</a>
+                <a href="#background" class="text-gray-600 hover:text-purple-700 transition-colors font-medium">기획 배경</a>
+                <a href="#features" class="text-gray-600 hover:text-purple-700 transition-colors font-medium">핵심 기능</a>
+                <a href="#tech-stack" class="text-gray-600 hover:text-purple-700 transition-colors font-medium">기술 스택</a>
+                <a href="#architecture" class="text-gray-600 hover:text-purple-700 transition-colors font-medium">아키텍처</a>
+                <a href="#results" class="text-gray-600 hover:text-purple-700 transition-colors font-medium">성과</a>
+                <a href="#future-plans" class="text-gray-600 hover:text-purple-700 transition-colors font-medium">향후 계획</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 전체 컨테이너 (flex-grow로 푸터 하단 고정) --><div class="container mx-auto max-w-5xl p-6 sm:p-12">
+
+        <!-- 프로젝트 소개 (이전 Header 영역 대체) --><section id="intro" class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-fuchsia-500 bg-clip-text text-transparent">
+                Learning Flow
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600">
+                AI 기반 학습 자동화 플랫폼입니다.
+            </p>
+            <p class="text-lg text-gray-500 mt-6 max-w-3xl mx-auto">
+                PDF와 이미지 기반 학습 자료를 AI가 자동으로 요약하고, 퀴즈와 오답노트를 생성하여 학습 효율을 극대화하는 플랫폼입니다.
+            </p>
+
+            <!-- 버튼 추가 --><div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                <a href="https://github.com/chan1216/LearningFlow" class="inline-block px-8 py-3 text-lg font-semibold text-center text-white bg-gradient-to-r from-purple-600 to-fuchsia-500 rounded-lg hover:from-purple-700 hover:to-fuchsia-600 transition-colors">
+                    GitHub 방문
+                </a>
+                <a href="#" class="inline-block px-8 py-3 text-lg font-semibold text-center text-purple-700 bg-white border border-purple-500 rounded-lg hover:bg-purple-50 transition-colors">
+                    Email 문의
+                </a>
+            </div>
+        </section>
+
+        <!-- 메인 콘텐츠: 섹션별 분리 --><main class="space-y-16">
+
+            <!-- 1. 기획 배경 --><section id="background">
+                <h2 class="text-3xl font-bold border-b-2 border-purple-400 pb-3 mb-8">📌 기획 배경</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- 문제 인식 --><div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">📍 문제 인식</h3>
+                        <ul class="list-disc list-outside ml-5 space-y-2 text-lg">
+                            <li>많은 학습자들이 강의나 문서를 정리하는 데 과도한 시간을 사용하고 있습니다.</li>
+                            <li>요약, 정리, 오답 관리와 같은 반복적인 작업이 학습 효율을 낮추는 주요 원인입니다.</li>
+                            <li>기존 요약 도구는 단순 요약 기능에 머물러, 학습 과정 전체를 지원하지 못합니다.</li>
+                        </ul>
+                    </div>
+                    <!-- 인사이트 --><div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                        <h3 class="text-2xl font-semibold text-gray-700 mb-4">🧠 인사이트</h3>
+                        <ul class="list-disc list-outside ml-5 space-y-2 text-lg">
+                            <li>실제 학습자는 “요약 → 퀴즈 → 오답”의 흐름을 반복하며 학습 효과를 강화합니다.</li>
+                            <li>따라서 요약뿐 아니라 퀴즈 생성과 오답 자동 정리를 일괄적으로 처리하는 통합 학습 플랫폼의 필요성을 확인했습니다.</li>
+                            <li>AI 모델을 활용하면 학습 자료의 핵심 정보를 정확하게 추출하고 개인 맞춤형 학습 경험을 제공할 수 있다고 판단했습니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 핵심 기능 --><section id="features">
+                <h2 class="text-3xl font-bold border-b-2 border-purple-400 pb-3 mb-8">📌 핵심 기능</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 기능 카드 --><div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                        <h4 class="text-xl font-bold mb-2">🎯 AI 학습 요약</h4>
+                        <p class="text-gray-600">사용자가 업로드한 PDF, 이미지, 텍스트 자료를 AI가 핵심 문장 중심으로 자동 요약합니다.</p>
+                    </div>
+                    <!-- 기능 카드 --><div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                        <h4 class="text-xl font-bold mb-2">📝 자동 퀴즈 생성</h4>
+                        <p class="text-gray-600">요약된 내용을 기반으로 AI가 주요 개념을 분석하여 객관식 또는 단답형 문제를 자동 생성합니다.</p>
+                    </div>
+                    <!-- 기능 카드 --><div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                        <h4 class="text-xl font-bold mb-2">📚 오답노트 자동 관리</h4>
+                        <p class="text-gray-600">사용자가 틀린 문제를 자동으로 저장하고 날짜별 및 유형별로 정리하여 체계적인 복습을 지원합니다.</p>
+                    </div>
+                    <!-- 기능 카드 --><div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                        <h4 class="text-xl font-bold mb-2">🔍 이미지 요약 기능</h4>
+                        <p class="text-gray-600">사진과 스크린샷 등 이미지 파일에서 텍스트를 추출한 후 요약하여 다양한 학습 자료를 지원합니다.</p>
+                    </div>
+                    <!-- 기능 카드 --><div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                        <h4 class="text-xl font-bold mb-2">🖥 PDF 변환 기능</h4>
+                        <p class="text-gray-600">요약 결과를 PDF로 변환하여 다운로드할 수 있으며 정리된 학습 자료로 활용할 수 있습니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 기술 스택 --><section id="tech-stack">
+                <h2 class="text-3xl font-bold border-b-2 border-purple-400 pb-3 mb-8">📌 기술 스택</h2>
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3 bg-gradient-to-r from-purple-600 to-fuchsia-500 bg-clip-text text-transparent">Frontend</h4>
+                            <ul class="list-disc list-outside ml-5 space-y-1 text-lg">
+                                <li>React</li>
+                                <li>TypeScript</li>
+                                <li>Tailwind CSS</li>
+                                <li>Vite</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3 bg-gradient-to-r from-purple-600 to-fuchsia-500 bg-clip-text text-transparent">Backend</h4>
+                            <ul class="list-disc list-outside ml-5 space-y-1 text-lg">
+                                <li>FastAPI</li>
+                                <li>SQLAlchemy</li>
+                                <li>Uvicorn</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-3 bg-gradient-to-r from-purple-600 to-fuchsia-500 bg-clip-text text-transparent">AI / File / Infra</h4>
+                            <ul class="list-disc list-outside ml-5 space-y-1 text-lg">
+                                <li>OpenAI GPT-4 / 4o</li>
+                                <li>OCR (이미지 텍스트 추출)</li>
+                                <li>PDF Parser</li>
+                                <li>ReportLab (PDF 생성)</li>
+                                <li>GitHub</li>
+                                <li>Render / Railway</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. 시스템 아키텍처 --><section id="architecture">
+                <h2 class="text-3xl font-bold border-b-2 border-purple-400 pb-3 mb-8">📌 시스템 아키텍처</h2>
+                
+                <h3 class="text-2xl font-semibold text-gray-700 mb-4">🏗 전체 서비스 아키텍처</h3>
+                <p class="text-lg mb-8 bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    React 기반 프론트엔드와 FastAPI 기반 백엔드, SQLAlchemy 데이터베이스를 사용하여 전체 시스템을 직접 구축했습니다.
+                </p>
+
+                <!-- === 시각적 아키텍처 다이어그램 === --><div class="my-12">
+                    <div class="flex flex-col md:flex-row items-center justify-center flex-wrap md:flex-nowrap gap-4 p-6 bg-white rounded-lg shadow-sm border border-gray-200">
+                        
+                        <!-- 1. User --><div class="flex flex-col items-center text-center">
+                            <div class="w-28 h-28 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-200 to-purple-300">
+                                <span class="font-bold text-lg text-gray-800">User</span>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600 font-medium">File Upload &<br>Interaction</p>
+                        </div>
+
+                        <!-- Arrow --><svg class="w-8 h-8 text-gray-400 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        <svg class="w-8 h-8 text-gray-400 md:hidden my-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+
+
+                        <!-- 2. React SPA --><div class="flex flex-col items-center text-center">
+                            <div class="w-28 h-28 flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-300 to-purple-400">
+                                <span class="font-bold text-lg text-gray-800">React SPA</span>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600 font-medium">Frontend UI</p>
+                        </div>
+
+                        <!-- Arrow --><svg class="w-8 h-8 text-gray-400 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        <svg class="w-8 h-8 text-gray-400 md:hidden my-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+
+
+                        <!-- 3. FastAPI --><div class="flex flex-col items-center text-center">
+                            <div class="w-28 h-28 flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-400 to-fuchsia-400">
+                                <span class="font-bold text-lg text-gray-800">FastAPI</span>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600 font-medium">Backend &<br>AI Logic</p>
+                        </div>
+                        
+                        <!-- Arrow --><svg class="w-8 h-8 text-gray-400 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        <svg class="w-8 h-8 text-gray-400 md:hidden my-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+
+
+                        <!-- 4. Database --><div class="flex flex-col items-center text-center">
+                            <div class="w-28 h-28 flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 to-fuchsia-500">
+                                <span class="font-bold text-lg text-white">Database</span>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600 font-medium">SQLAlchemy</p>
+                        </div>
+                        
+                        <!-- Arrow --><svg class="w-8 h-8 text-gray-400 hidden md:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        <svg class="w-8 h-8 text-gray-400 md:hidden my-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+
+                        
+                        <!-- 5. Deployment --><div class="flex flex-col items-center text-center">
+                            <div class="w-28 h-28 flex items-center justify-center rounded-lg bg-gradient-to-r from-purple-600 to-fuchsia-600">
+                                <span class="font-bold text-lg text-white">Deployment</span>
+                            </div>
+                            <p class="mt-2 text-sm text-gray-600 font-medium">Render / Railway</p>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- === 다이어그램 끝 === --><h3 class="text-2xl font-semibold text-gray-700 mb-4">🔄 전체 데이터 흐름</h3>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <ol class="list-decimal list-outside ml-5 space-y-4 text-lg">
+                        <li>
+                            <strong class="font-semibold gradient-text from-purple-600 to-fuchsia-500">User → Frontend:</strong>
+                            사용자가 PDF 또는 이미지 파일을 업로드하면 전처리 후 서버로 전달합니다.
+                        </li>
+                        <li>
+                            <strong class="font-semibold gradient-text from-purple-600 to-fuchsia-500">Frontend → Backend (FastAPI):</strong>
+                            업로드된 자료를 텍스트로 변환한 뒤 요약 요청을 서버로 전달합니다.
+                        </li>
+                        <li>
+                            <strong class="font-semibold gradient-text from-purple-600 to-fuchsia-500">Backend → OpenAI API:</strong>
+                            AI 모델을 통해 텍스트 요약, 퀴즈 생성, 오답 분석을 수행합니다.
+                        </li>
+                        <li>
+                            <strong class="font-semibold gradient-text from-purple-600 to-fuchsia-500">Backend → Database (SQLAlchemy):</strong>
+                            요약본, 생성된 문제, 오답 정보, 학습 이력을 데이터베이스에 저장합니다.
+                        </li>
+                        <li>
+                            <strong class="font-semibold gradient-text from-purple-600 to-fuchsia-500">DB → Frontend:</strong>
+                            요약본, 퀴즈, 오답노트 데이터를 UI로 반환하여 사용자에게 제공합니다.
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- 5. 결과 및 성과 --><section id="results">
+                <h2 class="text-3xl font-bold border-b-2 border-purple-400 pb-3 mb-8">📌 결과 및 성과</h2>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <ul class="list-disc list-outside ml-5 space-y-2 text-lg">
+                        <li>요약 생성 속도를 기존 대비 약 70% 단축했습니다.</li>
+                        <li>자동 퀴즈 생성 기능을 통해 복습 효율을 크게 향상했습니다.</li>
+                        <li>오답노트 자동화를 통해 학습 지속성과 재학습 효율을 높였습니다.</li>
+                        <li>PDF, 이미지 등 다양한 형식의 학습 자료를 완전하게 지원합니다.</li>
+                        <li>프론트엔드와 백엔드 전체를 직접 설계하며 풀스택 개발 역량을 강화했습니다.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 6. 향후 계획 --><section id="future-plans">
+                <h2 class="text-3xl font-bold border-b-2 border-purple-400 pb-3 mb-8">📌 향후 계획</h2>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <ul class="list-disc list-outside ml-5 space-y-2 text-lg">
+                        <li>학습 패턴과 오답 데이터를 기반으로 한 개인화 추천 기능을 개발할 예정입니다.</li>
+                        <li>“나만의 학습 다이어리” 기능을 추가하여 학습 히스토리를 시각적으로 관리할 예정입니다.</li>
+                        <li>퀴즈 AI 모델을 고도화하여 적응형 문제 생성 기능을 도입할 예정입니다.</li>
+                        <li>캐싱 및 모델 최적화를 통해 전체 응답 속도를 향상할 예정입니다.</li>
+                        <li>모바일 환경 대응과 UI 개선을 통해 접근성을 강화할 예정입니다.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+
+    </div><!-- End of .container --><!-- === Footer 추가 === --><footer class="bg-gray-900 text-gray-400 mt-24 border-t border-gray-700 w-full">
+        <div class="container mx-auto max-w-5xl p-12 text-center">
+            <!-- Quote --><blockquote class="text-xl italic text-gray-300 mb-8 max-w-2xl mx-auto">
+                “Learning Flow는 당신의 시간을 아껴주는 AI 학습 파트너입니다.”
+            </blockquote>
+            
+            <!-- Copyright --><p class="text-gray-500 mb-4">
+                © 2025 Learning Flow. ALL RIGHTS RESERVED.
+            </p>
+            
+            <!-- Built by message --><p class="text-sm text-gray-500 mb-6">
+                Designed and Developed by 김찬영
+            </p>
+            
+            <!-- Hashtags --><div class="flex justify-center space-x-4 flex-wrap gap-2">
+                <span class="text-xs font-mono bg-gray-700 text-purple-300 px-2 py-1 rounded">#React</span>
+                <span class="text-xs font-mono bg-gray-700 text-purple-300 px-2 py-1 rounded">#FastAPI</span>
+                <span class="text-xs font-mono bg-gray-700 text-purple-300 px-2 py-1 rounded">#OpenAI</span>
+                <span class="text-xs font-mono bg-gray-700 text-purple-300 px-2 py-1 rounded">#SQLAlchemy</span>
+                <span class="text-xs font-mono bg-gray-700 text-purple-300 px-2 py-1 rounded">#TailwindCSS</span>
+            </div>
+        </div>
+    </footer>
+    <!-- === Footer 끝 === --><!-- Smooth Scroll JavaScript --><script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    const header = document.querySelector('nav');
+                    // 네비게이션 헤더의 높이를 동적으로 가져옵니다.
+                    const headerHeight = header ? header.offsetHeight : 0;
+                    
+                    // 요소의 실제 문서상 상단 위치를 계산합니다.
+                    const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                    
+                    // 스크롤할 최종 위치를 계산합니다. (요소 상단 - 헤더 높이 - 16px 여백)
+                    const offsetPosition = targetTop - headerHeight - 16; 
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
